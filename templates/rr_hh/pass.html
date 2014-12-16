@@ -1,0 +1,475 @@
+
+<body>
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark">
+			<i class="fa fa-pencil-square-o fa-fw "></i> 
+				Personal
+			<span>> 
+				Cambio de Contraseña
+			</span>
+		</h1>
+	</div>	
+</div>
+<section id="widget-grid" class="">
+	<div class="row">
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2>Lista de Personal</h2>
+				</header>
+				<div>
+					<div class="jarviswidget-editbox">
+					</div>
+					<div class="widget-body no-padding">
+						<div class="table-responsive">
+							
+							<table class="table">
+							<thead>			                
+								<tr>
+									<th style="display:none;">ID</th>
+									<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombres</th><th>Apellidos</th>
+									<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Telefono</th>
+									<th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Direccion</th>
+									<th data-hide="phone,tablet"> DNI</th>		
+									<th data-hide="phone,tablet"></th>
+									 </tr> </thead> <tbody id = "Tematico">
+							</tbody>
+						</table>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+		</article>
+	</div>
+
+	
+	<div class="row">
+
+
+		<!-- NEW COL START -->
+		<article class="col-sm-12 col-md-12 col-lg-6">
+		<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false">
+				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
+					<h2>Elija Tipo de Busqueda</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<div class="widget-body">
+
+						<form class="form-horizontal">
+							
+							<fieldset>								
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="select-1">Seleccione </label>
+									<div class="col-md-10">
+										<select class="form-control" id="cb">
+											<option value="0">DNI</option>
+											<option value="1">Nombres</option>
+											<option value="2">Apellidos</option>
+										</select> 
+									</div>
+								</div>
+								<div class="well">		
+								<div class="input-group">
+									<input class="form-control" type="text" placeholder="Search..." id="texto">
+										<div class="input-group-btn">
+											<button class="btn btn-default btn-primary" type="button" id="buscar">
+											<i class="fa fa-search"></i> Buscar
+											</button>
+										</div>
+								</div>
+								</div>
+								
+							</fieldset>
+						</form>
+
+					</div>
+				</div>				
+			</div>						
+
+		</article>	
+
+		<article class="col-sm-12 col-md-12 col-lg-6">
+			
+			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+					
+					data-widget-colorbutton="false"	
+					data-widget-editbutton="false"
+					data-widget-togglebutton="false"
+					data-widget-deletebutton="false"
+					data-widget-fullscreenbutton="false"
+					data-widget-custombutton="false"
+					data-widget-collapsed="true" 
+					data-widget-sortable="false"
+					
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>Cambio de Contraseña </h2>				
+					
+				</header>
+
+				<!-- widget div-->
+				<div>
+					
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+						
+					</div>
+					<!-- end widget edit box -->
+					
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+						
+						<form action="#" method="POST" id="checkout-form" class="smart-form" novalidate="novalidate">						
+						{% csrf_token %}
+							<label class="label"  >{{form.id}}</label>
+							<fieldset>
+								<div class="row">
+									<section class="col col-6">
+										<label class="input" id="lblnobre"> <i class="icon-prepend fa fa-user"></i>
+											{{form.emp_nom}}
+										</label>
+										<div class="note note-error" id="eNon"></div>
+									</section>				
+									<section class="col col-6">
+										<label class="input" id="lblape"> <i class="icon-prepend fa fa-user"></i>
+										{{form.emp_ape}}
+										</label>
+										<div class="note note-error" id="eApe"></div>
+									</section>
+								</div>
+								<section>
+								<label class="label">Usuario</label>
+									<label class="input"> <i class="icon-append fa fa-user" id="lbluser"></i>
+										{{form.username}}
+										<b class="tooltip tooltip-bottom-right">Usuario Actual</b> </label>
+										
+								</section>
+							</fieldset>
+
+							<fieldset>				
+								
+								<section>
+									<label class="input"> <i class="icon-append fa fa-lock" id="lblpass0"></i>
+										{{form.password}}
+										<b class="tooltip tooltip-bottom-right">su clave puede contener letras, numero y subguiones</b> </label>
+										<div class="note note-error" id="ePass"></div>
+								</section>
+								<section>
+									<label class="input"> <i class="icon-append fa fa-lock" id="lblpass"></i>
+										{{form.password1}}
+										<b class="tooltip tooltip-bottom-right">su clave puede contener letras, numero y subguiones</b> </label>
+										<div class="note note-error" id="ePass1"></div>
+								</section>
+								<section>
+									<label class="input" id="lblpass2"> <i class="icon-append fa fa-lock"></i>
+										{{form.password2}}
+										<b class="tooltip tooltip-bottom-right">Vuelva a Ingresar su nueva clave</b> </label>
+										<div class="note note-error" id="ePass2"></div>
+								</section>
+							</fieldset>
+							<footer>
+								<button type="button" class="btn btn-success disabled" type="button" id="btncambios"><i class="fa fa-save" ></i>
+									Guardar Cambios
+								</button>
+								<button type="button" class="btn btn-default" onclick="window.history.back();">
+									Regresar
+								</button>
+							</footer>
+						</form>
+
+					</div>
+					<!-- end widget content -->
+					
+				</div>
+				<!-- end widget div -->
+				
+			</div>
+			
+			
+		</article>
+	</div>
+
+
+</section>
+
+
+<script >
+
+
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+ function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+	$("#buscar").on("click", metodo)
+	function metodo()
+	{
+		$('#btncambios').addClass('disabled')
+		
+		var opcion=$(texto).val()
+		var seleccion = $(cb).val()
+		$.ajax({ 
+			data: {'texto': opcion, 'seleccion': seleccion},
+			url: '/buscar-personal/',
+			type: 'get',
+
+			success: function(data)
+			{
+				$("#Tematico tr").remove();
+				for (var i=0; i<data.length; i++)
+				{									
+					var tr = '<tr>';
+					var td1 = '<td style="display:none;"><a href="javascript:void(0);">' + data[i].pk + "</a></td>";
+               var td2 = '<td>' + data[i].fields.emp_nom +'</td>';
+               var td3 = '<td>' + data[i].fields.emp_ape + '</td>';
+               var td4 = '<td>' + data[i].fields.emp_tel + '</td>';
+               var td5 = '<td>' + data[i].fields.emp_direccion + '</td>';
+               var td6 = '<td>' + data[i].fields.DNI +'</td>';
+               
+               var td8 = '<td><a href="#" role="button" class="btn btn-primary btn-xs" data-toggle="modal" id="' + data[i].pk + '" data-name="'+data[i].pk+'"><i class="fa fa-pencil"></i> &nbsp;&nbsp;Modificar</a></td></tr>'
+               
+
+               $("#Tematico").append(tr + td1 + td2 + td3 + td4 + td5 + td6 +td8);					
+					//alert("dddd");
+				}
+
+			}
+		});
+	}
+	$(document).on("click",".btn-xs",Cargar);
+	function Cargar()
+	{
+		var opcion=$(this).attr('id')
+		var seleccion = 6	
+		$.ajax({ 
+			data: {'texto': opcion, 'seleccion': seleccion},
+			url: '/buscar-personal/',
+			type: 'get',
+			success: function(data)
+			{	$('#btncambios').removeClass('disabled')
+				$("#codigo").val(data.pk)		   	
+				$("#nombres").val(data.nombre)
+				$("#apellidos").val(data.apellido)
+				$("#username").val(data.user)
+			}
+		});
+	}
+$("#btncambios").on("click", guarCambios)
+	function guarCambios()
+	{
+		$.ajax({
+        url: '/modi-pass/',
+        type : "POST",
+        data : $('#checkout-form').serialize(), 
+        success : function(json) 
+        {        	
+            if (json.errors)
+            {              
+                if(json.errors.password)
+            	{            		
+            		$('#lblpass0').removeClass('input state-success');
+            		$('#lblpass0').addClass('input state-error')
+            		$("#ePass").text(json.errors.password);
+            	}else
+            	{
+            		$('#lblpass0').addClass('input state-success');
+            		$("#ePass").text( "");
+                }
+                if(json.errors.password1)
+            	{            		
+            		$('#lblpass').removeClass('input state-success');
+            		$('#lblpass').addClass('input state-error')
+            		$("#ePass1").text(json.errors.password1);
+            	}else
+            	{
+            		$('#lblpass').addClass('input state-success');
+            		$("#ePass1").text( "");
+                }
+                if(json.errors.password2)
+            	{            		
+            		$('#lblpass2').removeClass('input state-success');
+            		$('#lblpass2').addClass('input state-error')
+            		$("#ePass2").text(json.errors.password2);
+            	}else
+            	{
+            		$('#lblpass2').addClass('input state-success');
+            		$("#ePass2").text( "");
+                }
+            }            
+            else
+            {
+            	alert(json.result);
+            	location.reload();
+            }
+				//console.log(json)
+		}
+		});
+	}
+</script>
+
+<script type="text/javascript">
+
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+
+	pageSetUp();
+	
+	
+	// PAGE RELATED SCRIPTS
+
+	// pagefunction
+	
+	var pagefunction = function() {
+
+		var $checkoutForm = $('#checkout-form').validate({
+		// Rules for form validation
+			rules : {
+				fname : {
+					required : true
+				},
+				lname : {
+					required : true
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				phone : {
+					required : true
+				},				
+				code : {
+					required : true,
+					digits : true
+				},
+				address : {
+					required : true
+				}
+			},
+	
+			// Messages for form validation
+			messages : {
+				fname : {
+					required : 'Please Ingrese sus Nombres'
+				},
+				lname : {
+					required : 'Please Ingrese sus Apellidos'
+				},
+				email : {
+					required : 'Ingrese un Email',
+					email : 'Ingrese un Email Valido'
+				},
+				phone : {
+					required : 'Ingrese un Numero Telefonico'
+				},				
+				code : {
+					required : 'Ingrese un DNI',
+					digits : 'Solo Numeros Por Favor'
+				},
+				
+			},
+	
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+				
+		
+
+		
+	};
+	
+	// end pagefunction
+	
+	// Load form valisation dependency 
+	loadScript("static/js/plugin/jquery-form/jquery-form.min.js", pagefunction);
+	
+</script>

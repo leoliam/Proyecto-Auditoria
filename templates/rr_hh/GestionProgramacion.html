@@ -1,0 +1,609 @@
+
+<body>
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark">
+			<i class="fa fa-pencil-square-o fa-fw "></i> 
+				Horarios
+			<span>> 
+				Asignacion de Horarios
+			</span>
+		</h1>
+	</div>	
+</div>
+
+<section id="widget-grid" class="">
+	<div class="row">
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2>Lista de Personal</h2>
+				</header>
+				<div>
+					<div class="jarviswidget-editbox">
+					</div>
+					<div class="widget-body no-padding">
+						<div class="table-responsive">
+							
+							<table class="table">
+							<thead>			                
+								<tr>
+									<th style="display:none;">ID</th>
+									<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombres</th><th>Apellidos</th>
+									<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Telefono</th>
+									<th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Direccion</th>
+									<th data-hide="phone,tablet"> DNI</th>		
+									<th data-hide="phone,tablet"></th>
+									 </tr> </thead> <tbody id = "Tematico">
+							</tbody>
+						</table>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+		</article>
+	</div>
+
+	
+	<div class="row">
+
+
+		<!-- NEW COL START -->
+		<article class="col-sm-12 col-md-12 col-lg-6">
+		<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false">
+				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
+					<h2>Elija Tipo de Busqueda</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<div class="widget-body">
+
+						<form class="form-horizontal">
+							
+							<fieldset>								
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="select-1">Seleccione </label>
+									<div class="col-md-10">
+										<select class="form-control" id="cb">
+											<option value="3">DNI</option>
+											<option value="4">Nombres</option>
+											<option value="5">Apellidos</option>
+										</select> 
+									</div>
+								</div>
+								<div class="well">		
+								<div class="input-group">
+									<input class="form-control" type="text" placeholder="Search..." id="texto">
+										<div class="input-group-btn">
+											<button class="btn btn-default btn-primary" type="button" id="busca">
+											<i class="fa fa-search"></i> Buscar
+											</button>
+										</div>
+								</div>
+								</div>
+								
+							</fieldset>
+						</form>
+
+					</div>
+				</div>				
+			</div>	
+							
+
+		</article>
+		<article class="col-sm-12 col-md-12 col-lg-6">
+			
+			
+			<div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>Plugins & Enhancers </h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<form action="#" method="POST" id="checkout-form">
+						<!-- <input type="hidden" id="id"  />-->
+						<label class="label"  ></label>
+							<fieldset>				
+								<div class="form-group">
+									<label class="col-md-2 control-label">Nombre</label>
+									<div class="col-md-10">
+										<input class="form-control"id="nombres" type="text"readonly>
+									</div>
+								</div>
+								
+								
+							</fieldset>
+
+							<fieldset>
+								<legend>
+									
+								</legend>
+
+								<div class="form-group">
+								<label>Servicios Asignados</label>
+									
+									<select style="width:100%" class="select2" id="servicio">
+										
+									</select>
+								</div>	
+
+								<div class="input-group-btn">
+											<button class="btn btn-default btn-primary disabled" type="button" id="CarHor">
+											<i class="fa fa-search"></i> Cargar Horario
+											</button>
+										</div>					
+
+							</fieldset>							
+	
+
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>		
+			
+		</article>
+	</div>
+
+
+</section>
+<div class="row">
+	
+	<div class="col-sm-12 col-md-12 col-lg-12">
+
+		<!-- new widget -->
+		<div class="jarviswidget jarviswidget-color-blueDark">
+
+			<!-- widget options:
+			usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+			data-widget-colorbutton="false"
+			data-widget-editbutton="false"
+			data-widget-togglebutton="false"
+			data-widget-deletebutton="false"
+			data-widget-fullscreenbutton="false"
+			data-widget-custombutton="false"
+			data-widget-collapsed="true"
+			data-widget-sortable="false"
+
+			-->
+			<header>
+				<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+				<h2> My Events </h2>
+				<div class="widget-toolbar">
+					<!-- add: non-hidden - to disable auto hide -->
+					<div class="btn-group">
+						<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+							Showing <i class="fa fa-caret-down"></i>
+						</button>
+						<ul class="dropdown-menu js-status-update pull-right">
+							<li>
+								<a href="javascript:void(0);" id="mt">Month</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" id="ag">Agenda</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" id="td">Today</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<!-- widget div-->
+			<div>
+
+				<div class="widget-body no-padding">
+					<!-- content goes here -->
+					<div class="widget-body-toolbar">
+
+						<div id="calendar-buttons">
+
+							<div class="btn-group">
+								<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+								<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<div id="calendar"></div>
+
+
+					<!-- end content -->
+				</div>
+
+			</div>
+			<!-- end widget div -->
+		</div>
+		<!-- end widget -->
+
+	</div>
+
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="titulo"class="modal-title"></h4>            
+                <input type="hidden" id="id"  />
+				<input type="hidden" id="serEmp"  />
+            </div>
+
+            <div class="modal-body">
+                <!-- The form is placed inside the body of modal -->
+                <form id="loginForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label"> Hora de Ingreso:</label>
+
+                        <div class="col-sm-5">
+                            <input class="form-control"id="startTime" type="text">
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Hora de Salida</label> 
+                        <div class="col-sm-5">
+
+                            <input class="form-control"id="endTime" type="text">
+                        </div>
+                    </div>
+                    <input type="hidden" id="fecha"  />
+                    <div class="form-group">
+                        <div class="col-sm-5 col-sm-offset-3">
+                            <button type="button" id="modificar" class="btn btn-default">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+$(document).off( "click", ".btn-xs" )
+$("#modificar").on("click", metodo)
+	function metodo()
+	{				
+		$.ajax({ 
+			data: {'id': $("#id").val(), 'fecha': $("#fecha").val(),'ingreso': $("#startTime").val(), 'salida': $("#endTime").val(),'serviemp':$(serEmp).val()},
+			url: '/modi-horario/',
+			type: 'get',
+			success: function(data)
+			{				
+				alert(data.result)
+			}
+		});
+	}
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+	
+	pageSetUp();	
+
+	// pagefunction
+	
+	var pagefunction = function() {
+		
+	$("#CarHor").on("click", horario)
+	function horario()
+	{
+		$(serEmp).val($('#servicio').val())
+		$.ajax({ 
+			data: {'servicio': $('#servicio').val(), 'seleccion': 1},
+				url: '/buscar-horario/',
+				type: 'get',
+				success: function(data)
+				{ 
+					$('#calendar').fullCalendar( 'removeEvents')
+					for (var i=0; i<data.length; i++)
+					{
+
+						calendar.fullCalendar('renderEvent',data[i],
+							true 
+						);
+					}
+					
+				}
+			});
+	}
+	$("#busca").on("click", metodo)
+	function metodo()
+	{
+		$('#CarHor').addClass('disabled')
+		var seleccion = $(cb).val()
+		var opcion=$(texto).val()
+		$.ajax({ 
+			data: {'texto': opcion, 'seleccion': seleccion},
+			url: '/buscar-personal/',
+			type: 'get',
+
+			success: function(data)
+			{
+				$("#Tematico tr").remove();
+				for (var i=0; i<data.length; i++)
+				{									
+					var tr = '<tr>';
+					var td1 = '<td style="display:none;"><a href="javascript:void(0);">' + data[i].pk + "</a></td>";
+               var td2 = '<td>' + data[i].fields.emp_nom +'</td>';
+               var td3 = '<td>' + data[i].fields.emp_ape + '</td>';
+               var td4 = '<td>' + data[i].fields.emp_tel + '</td>';
+               var td5 = '<td>' + data[i].fields.emp_direccion + '</td>';
+               var td6 = '<td>' + data[i].fields.DNI +'</td>';
+               
+               var td8 = '<td><a href="#" role="button" class="btn btn-danger btn-xs" data-toggle="modal" id="' + data[i].pk + '" data-name="'+data[i].pk+'"><i class="fa fa-pencil"></i> &nbsp;&nbsp;Cargar</a></td></tr>'
+               
+
+               $("#Tematico").append(tr + td1 + td2 + td3 + td4 + td5 + td6 +td8);					
+					//alert("dddd");
+				}
+
+			}
+		});
+	}
+	$(document).on("click",".btn-danger",Cargar);
+	function Cargar()
+	{
+
+		var texto=$(this).attr('id')			
+		$.ajax({ 
+			data: {'texto': texto, 'seleccion': 6},
+			url: '/buscar-personal/',
+			type: 'get',
+			success: function(data)
+			{	$('#CarHor').removeClass('disabled')
+				$("#id").val(data.pk)		   	
+				$("#nombres").val(data.nombre+" "+data.apellido)
+			}
+		});		
+		$.ajax({ 
+			data: {'texto': texto, 'seleccion': 2},
+				url: '/buscar-carga/',
+				type: 'get',
+				success: function(data)
+				{ 
+					$("#servicio option").remove();
+					for (var i=0; i<data.length; i++)
+					{			
+						if(i==0)
+						{
+							$('#servicio').append('<option value="'+data[i].pk+'" >'+data[i].servicio+'</option>');
+						}
+						else
+						{
+							$('#servicio').append('<option value="'+data[i].pk+'">'+data[i].servicio+'</option>');
+						}
+						
+					}	
+				}
+			});
+
+		
+		
+	}
+	
+	function formatohora(date)
+	{
+
+	         hora=date.getHours()
+	         min=date.getMinutes()
+	         if (hora < 10){hora = "0" + hora;}
+	         if (min < 10){min = "0" + min;}
+	         tiempo= hora+":"+min
+		return tiempo
+	}
+	function formatofecha(date)
+	{
+		mes=date.getMonth()+1
+		dia=date.getDate()
+		if (mes < 10){mes = "0" + mes;}
+		if (dia < 10){dia = "0" + dia;}
+
+	         tiempo=  date.getFullYear()+ "-" +mes+ "-" + dia 
+		return tiempo
+	}
+	
+
+			
+	var date = new Date();
+	    var d = date.getDate();
+	    var m = date.getMonth();
+	    var y = date.getFullYear();
+	
+	    var hdr = {
+	        left: 'title',
+	        center: 'month,agendaWeek,agendaDay',
+	        right: 'prev,today,next'
+	    };
+	
+	    	    
+	
+	    /* initialize the calendar
+		 -----------------------------------------------------------------*/
+	
+	    var calendar =$('#calendar').fullCalendar({
+	
+	        header: hdr,
+	        
+	        buttonText: {
+	            prev: '<i class="fa fa-chevron-left"></i>',
+	            next: '<i class="fa fa-chevron-right"></i>'
+	        },
+	        monthNames: ['Enero','Febrero','Marzo','Abril','Maiyo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+	        monthNamesShort:
+            ['Ene.','Feb.','Mar','Abr.','May','Jun','Jul.','Ago','Sep.','Oct.','Nov.','Dic.'],
+            dayNames: ['Domingo','Lunes','Martes','Miercoles','Jeuves','Veiernes','Sabado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jeu', 'Vie', 'Sab'],
+			editable: true,
+	        droppable: true, 
+	        
+	
+	        select: function (start, end, allDay) {
+	            var title = prompt('Event Title:');
+	            if (title) {
+	                calendar.fullCalendar('renderEvent', {
+	                        title: title,
+	                        start: start,
+	                        end: end,
+	                        allDay: allDay
+	                    }, true // make the event "stick"
+	                );
+	            }
+	            calendar.fullCalendar('unselect');
+	        },
+	      /*  eventClick: function(calEvent, jsEvent, view) {
+
+        alert('Event: ' + calEvent.title);
+        alert('dia: ' + calEvent.start);
+        alert('View: ' + view.name);
+
+        // change the border color just for fun
+        $(this).css('border-color', 'red');
+
+    },*/
+	
+	         timeFormat: 'H(:mm)',
+	
+	        eventRender: function (event, element, icon) {
+	            if (!event.description == "") {
+	                element.find('.fc-event-title').append("<br/><span class='ultra-light'>" + event.description +
+	                    "</span>");
+	            }
+	            if (!event.icon == "") {
+	                element.find('.fc-event-title').append("<i class='air air-top-right fa " + event.icon +
+	                    " '></i>");
+	            }
+	            element.click(function() {
+	            	f=formatofecha(event.start);
+	        $("#id").val(event.id);
+	        $("#fecha").val(f);
+            $("#startTime").val(formatohora(event.start));
+            $("#endTime").val(formatohora(event.end));
+            $("#titulo").html("Fecha Original "+f);
+            $('#loginModal').modal()
+        });
+	        },
+	
+	        windowResize: function (event, ui) {
+	            $('#calendar').fullCalendar('render');
+	        }
+	    });
+	
+	    /* hide default buttons */
+	    $('.fc-header-right, .fc-header-center').hide();
+
+	
+	
+		$('#calendar-buttons #btn-prev').click(function () {
+		    $('.fc-button-prev').click();
+		    return false;
+		});
+		
+		$('#calendar-buttons #btn-next').click(function () {
+		    $('.fc-button-next').click();
+		    return false;
+		});
+		
+		$('#calendar-buttons #btn-today').click(function () {
+		    $('.fc-button-today').click();
+		    return false;
+		});
+		
+		$('#mt').click(function () {
+		    $('#calendar').fullCalendar('changeView', 'month');
+		});
+		
+		$('#ag').click(function () {
+		    $('#calendar').fullCalendar('changeView', 'agendaWeek');
+		});
+		
+		$('#td').click(function () {
+		    $('#calendar').fullCalendar('changeView', 'agendaDay');
+		});
+		
+	};
+	
+	// end pagefunction
+	
+	// loadscript and run pagefunction
+	loadScript("static/js/plugin/fullcalendar/jquery.fullcalendar.min.js", pagefunction);
+
+
+</script>

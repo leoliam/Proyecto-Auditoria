@@ -1,0 +1,555 @@
+
+<body>
+<div class="row">
+	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+		<h1 class="page-title txt-color-blueDark">
+			<i class="fa fa-pencil-square-o fa-fw "></i> 
+				Horarios
+			<span>> 
+				Asignacion de Horarios
+			</span>
+		</h1>
+	</div>	
+</div>
+
+<section id="widget-grid" class="">
+	<div class="row">
+		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2>Lista de Personal</h2>
+				</header>
+				<div>
+					<div class="jarviswidget-editbox">
+					</div>
+					<div class="widget-body no-padding">
+						<div class="table-responsive">
+							
+							<table class="table">
+							<thead>			                
+								<tr>
+									<th style="display:none;">ID</th>
+									<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Nombres</th><th>Apellidos</th>
+									<th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Telefono</th>
+									<th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Direccion</th>
+									<th data-hide="phone,tablet"> DNI</th>		
+									<th data-hide="phone,tablet"></th>
+									 </tr> </thead> <tbody id = "Tematico">
+							</tbody>
+						</table>
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
+		</article>
+	</div>
+
+	
+	<div class="row">
+
+
+		<!-- NEW COL START -->
+		<article class="col-sm-12 col-md-12 col-lg-6">
+		<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false">
+				
+				<header>
+					<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
+					<h2>Elija Tipo de Busqueda</h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<div class="widget-body">
+
+						<form class="form-horizontal">
+							
+							<fieldset>								
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="select-1">Seleccione </label>
+									<div class="col-md-10">
+										<select class="form-control" id="cb">
+											<option value="3">DNI</option>
+											<option value="4">Nombres</option>
+											<option value="5">Apellidos</option>
+										</select> 
+									</div>
+								</div>
+								<div class="well">		
+								<div class="input-group">
+									<input class="form-control" type="text" placeholder="Search..." id="texto">
+										<div class="input-group-btn">
+											<button class="btn btn-default btn-primary" type="button" id="buscar">
+											<i class="fa fa-search"></i> Buscar
+											</button>
+										</div>
+								</div>
+								</div>
+								
+							</fieldset>
+						</form>
+
+					</div>
+				</div>				
+			</div>	
+							
+
+		</article>	
+
+		<article class="col-sm-12 col-md-12 col-lg-6">
+			
+			
+			<div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header>
+					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+					<h2>Plugins & Enhancers </h2>
+
+				</header>
+
+				<!-- widget div-->
+				<div>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+						<form action="#" method="POST" id="checkout-form">
+						{% csrf_token %}
+						<label class="label"  >{{form.id}}</label>
+							<fieldset>				
+								<div class="form-group">
+									<label class="col-md-2 control-label">Nombre</label>
+									<div class="col-md-10">
+										<input class="form-control"id="nombres" type="text">
+									</div>
+								</div>
+								
+								
+							</fieldset>
+
+							<fieldset>
+								<legend>
+									
+								</legend>
+
+								<div class="form-group">
+								<label>Turno</label>
+									
+									{{form.turno}}
+								</div>
+
+								<div class="form-group">
+									<label>Servicios Asignados</label>
+									{{form.serviempledos}}
+									<div class="note note-error" id="eServemp"></div>
+								</div>
+
+							</fieldset>
+
+							<fieldset>
+								<legend>
+									Fecha de Asignación
+								</legend>
+
+								<div class="row">
+									
+									<div class="col-sm-12">
+										<label>Seleccione un Rango de Fechas:</label>
+									</div>
+									<div class="col-sm-6">
+
+										<div class="form-group">
+											<div class="input-group">
+											{{form.hor_fecha}}
+												
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+											</div>
+											<div class="note note-error" id="ehor_fecha"></div>
+										</div>
+
+									</div>
+									<div class="col-sm-6">
+
+										<div class="form-group">
+											<div class="input-group">
+												{{form.fec_fin}}
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+											</div>
+										</div>
+
+									</div>
+
+								</div>								
+							</fieldset>
+
+<fieldset>
+	<legend>
+		Hora de Ingreso:
+	</legend>
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<div class="input-group">
+						{{form.hor_ing}}
+						<span class="input-group-addon" ><i class="fa fa-clock-o"></i></span>					
+					</div>
+					<div class="note note-error" id="eHor"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</fieldset>
+<fieldset>
+	<legend>
+		Hora de Salida:
+	</legend>
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<div class="input-group">
+						{{form.hor_sal}}
+						<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+					</div>
+					<div class="note note-error" id="eHorsal"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</fieldset>
+	
+							<div class="form-actions">
+								<div class="row">
+									<div class="col-md-12">
+										<button class="btn btn-default" type="submit">
+											Cancel
+										</button>
+										<button class="btn btn-primary" type="submit">
+											<i class="fa fa-save"></i>
+											Submit
+										</button>
+									</div>
+								</div>
+							</div>
+
+						</form>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>		
+			
+		</article>
+	</div>
+
+
+</section>
+
+
+<script type="text/javascript">
+$(document).off( "click", ".btn-xs" )
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+	
+	pageSetUp();	
+
+	// pagefunction
+	
+	var pagefunction = function() {
+
+	
+		 $("#multiselect1 option").remove();
+	
+		 // Date Range Picker
+		$("#from").datepicker({
+			dateFormat : 'yy-mm-dd',
+			dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+			monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ], 
+		    defaultDate: "+1w",
+		    prevText: '<i class="fa fa-chevron-left"></i>',
+		    nextText: '<i class="fa fa-chevron-right"></i>',
+		    onClose: function (selectedDate) {
+		        $("#to").datepicker("option", "maxDate", selectedDate);
+		    }
+	
+		});
+		$("#to").datepicker({
+			dateFormat : 'yy-mm-dd',
+			dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+			monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ], 
+		    defaultDate: "+1w",
+		    prevText: '<i class="fa fa-chevron-left"></i>',
+		    nextText: '<i class="fa fa-chevron-right"></i>',
+		    onClose: function (selectedDate) {
+		        $("#from").datepicker("option", "minDate", selectedDate);
+		    }
+		});
+	
+		/*
+		 * TIMEPICKER
+		 */
+	
+		 //Load time picker script
+	
+		loadScript("static/js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js", runTimePicker);
+	
+		function runTimePicker() {
+		    $('#timepicker').timepicker();
+		    $('#timepicker2').timepicker();
+		}
+		
+		
+	
+
+
+
+$('#checkout-form').on('submit', function(event){
+    event.preventDefault();     
+    create_post();});
+    function create_post() 
+    { 
+    		$.ajax({
+	        	url: '/create-horario/',
+	        	type : "POST",
+	        	data : $('#checkout-form').serialize(), 
+		        success : function(json) 
+		        {  	
+		        	if (json.errorsHor)
+		            {
+		            	if(json.errorsHor.hor_sal)
+		            	{            		
+		            		
+		            		$("#eHorsal").text(json.errorsHor.hor_sal);
+		            	}else
+		            	{
+		            		
+		            		$("#eHorsal").text( "");
+		                }
+		                if(json.errorsHor.hor_ing)
+		            	{            		
+		            		
+		            		$("#eHor").text(json.errorsHor.hor_ing);
+		            	}else
+		            	{
+		            		
+		            		$("#eHor").text( "");
+		                }
+		                if(json.errorsHor.serviempledos)
+		            	{            		
+		            		
+		            		$("#eServemp").text(json.errorsHor.serviempledos);
+		            	}else
+		            	{
+		            		
+		            		$("#eServemp").text( "");
+		                }
+		                if(json.errorsHor.hor_fecha)
+		            	{            		
+		            		
+		            		$("#ehor_fecha").text(json.errorsHor.hor_fecha);
+		            	}else
+		            	{
+		            		
+		            		$("#ehor_fecha").text( "");
+		                }
+		            	
+		            }            
+		            else
+		            {
+		            	alert(json.result);
+		            	
+		            }           
+		        }
+	    	});
+    	
+    };
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+ function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+	$("#buscar").on("click", metodo)
+	function metodo()
+	{
+		
+		var seleccion = $(cb).val()
+		var opcion=$(texto).val()
+		$.ajax({ 
+			data: {'texto': opcion, 'seleccion': seleccion},
+			url: '/buscar-personal/',
+			type: 'get',
+
+			success: function(data)
+			{
+				$("#Tematico tr").remove();
+				for (var i=0; i<data.length; i++)
+				{									
+					var tr = '<tr>';
+					var td1 = '<td style="display:none;"><a href="javascript:void(0);">' + data[i].pk + "</a></td>";
+               var td2 = '<td>' + data[i].fields.emp_nom +'</td>';
+               var td3 = '<td>' + data[i].fields.emp_ape + '</td>';
+               var td4 = '<td>' + data[i].fields.emp_tel + '</td>';
+               var td5 = '<td>' + data[i].fields.emp_direccion + '</td>';
+               var td6 = '<td>' + data[i].fields.DNI +'</td>';
+               
+               var td8 = '<td><a href="#" role="button" class="btn btn-primary btn-xs" data-toggle="modal" id="' + data[i].pk + '" data-name="'+data[i].pk+'"><i class="fa fa-pencil"></i> &nbsp;&nbsp;Cargar</a></td></tr>'
+               
+
+               $("#Tematico").append(tr + td1 + td2 + td3 + td4 + td5 + td6 +td8);					
+					//alert("dddd");
+				}
+
+			}
+		});
+	}
+	$(document).on("click",".btn-xs",Cargar);
+	function Cargar()
+	{
+
+		var texto=$(this).attr('id')			
+		$.ajax({ 
+			data: {'texto': texto, 'seleccion': 6},
+			url: '/buscar-personal/',
+			type: 'get',
+			success: function(data)
+			{	$('#btncambios').removeClass('disabled')
+				$("#codigoemp").val(data.pk)		   	
+				$("#nombres").val(data.nombre+" "+data.apellido)
+			}
+		});		
+		$.ajax({ 
+			data: {'texto': texto, 'seleccion': 2},
+				url: '/buscar-carga/',
+				type: 'get',
+				success: function(data)
+				{ 
+					$("#multiselect1 option").remove();
+					for (var i=0; i<data.length; i++)
+					{			
+										
+						$('#multiselect1').append('<option value="'+data[i].pk+'">'+data[i].servicio+'</option>');
+					}	
+				}
+			});
+
+	}
+	
+	
+
+		
+	};
+	
+	// end pagefunction
+	
+	// loadscript and run pagefunction
+	pagefunction();
+
+
+</script>
