@@ -1,0 +1,20 @@
+from django.conf.urls import patterns, include, url
+urlpatterns = patterns('',		
+	
+	url(r'^home-area/$', 'apps.logistica.views.HomeArea' , name='Area'),
+	url(r'^buscar-area/$', 'apps.logistica.views.BuscarArea' , name='buscarA'),
+	url(r'^create-area/$', 'apps.logistica.views.CreateArea' , name='createA'),
+	url(r'^modi-area/$', 'apps.logistica.views.ModiArea' , name='modificarA '),
+	url(r'^home-servicio/$', 'apps.logistica.views.HomeServicio' , name='Servicio'),
+	url(r'^buscar-servicio/$', 'apps.logistica.views.BuscarServicio' , name='buscarServicio'),
+	url(r'^create-servicio/$', 'apps.logistica.views.CreateServicio' , name='createServicio'),
+	url(r'^modi-servicio/$', 'apps.logistica.views.ModiServicio' , name='modificarServicio'),
+	url(r'^home-cargo/$', 'apps.logistica.views.HomeCargo' , name='Cargo'),
+	url(r'^buscar-cargo/$', 'apps.logistica.views.BuscarCargo' , name='buscarCargo'),
+	url(r'^create-cargo/$', 'apps.logistica.views.CreateCargo' , name='createCargo'),
+	url(r'^modi-cargo/$', 'apps.logistica.views.ModiCargo' , name='modificarCargo'),	
+	url(r'^home-modelo/$', 'apps.logistica.views.HomeModelo' , name='Modelo'),
+	url(r'^buscar-modelo/$', 'apps.logistica.views.BuscarModelo' , name='buscarModelo'),
+	url(r'^create-modelo/$', 'apps.logistica.views.CreateModelo' , name='createModelo'),
+	url(r'^modi-modelo/$', 'apps.logistica.views.ModiModelo' , name='modificarModelo'),
+)

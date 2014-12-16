@@ -8,9 +8,9 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'consultorio',
+        'NAME': 'consultorio3',
         'USER': 'root',
-        'PASSWORD': 'dynamo',
+        'PASSWORD': '123',
     }
 }
 

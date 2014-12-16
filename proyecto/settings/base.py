@@ -13,7 +13,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS= ( 
     #'south',
-    'django_extensions',
+    #'django_extensions',
     #'social.apps.django_app.default',
     )
 
